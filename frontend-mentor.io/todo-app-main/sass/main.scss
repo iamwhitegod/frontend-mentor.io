@@ -41,6 +41,7 @@ $bold-font-weight: 700;
 
 // Imports
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+@import "./function";
 @import "./mixins";
 @import "./base";
 @import "./layout";

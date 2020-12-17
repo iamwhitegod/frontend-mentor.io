@@ -23,15 +23,48 @@
   align-items: center;
   padding: 0.8rem 1.2rem;
 
+  @include respond(md) {
+    padding: 1.2rem;
+  }
+
   span {
     color: $dark-grayish-blue;
     font-size: $links-font-size;
+
+    @include respond(md) {
+      font-size: 15px;
+    }
   }
 }
 
 .links {
   a {
     margin-right: 0.6rem;
+  }
+
+  @include respond(md) {
+    display: none;
+  }
+
+  &--2 {
+    display: none;
+
+    a {
+      font-size: $links-font-size;
+      margin-right: 1rem;
+    }
+
+    @include respond(md) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+
+      background-color: $very-light-gray;
+      border-radius: 0.3rem;
+      box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.12);
+      padding: 1.4rem;
+    }
   }
 }
 
