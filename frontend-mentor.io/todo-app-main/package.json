@@ -4,13 +4,18 @@
   "description": "Projects from frontend-mentor.io",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "gulp watch"
   },
   "keywords": [
     "frontend-mentor",
     "whitegod",
     "kingsley"
   ],
-  "author": "Whitegod",
-  "license": "ISC"
+  "author": "whitegod",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
+  }
 }

@@ -1,0 +1,172 @@
+/*
+  Color variables
+*/
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 16px; }
+  @media only screen and (max-width: 900px) {
+    html {
+      font-size: 14px; } }
+  @media only screen and (max-width: 600px) {
+    html {
+      font-size: 12px; } }
+
+body {
+  font-family: "Josefin sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400; }
+
+h1 {
+  font-size: 36px;
+  letter-spacing: 1.2rem;
+  color: #fafafa;
+  text-transform: uppercase; }
+  @media only screen and (max-width: 600px) {
+    h1 {
+      font-size: 28px; } }
+
+img {
+  display: block;
+  max-width: 100%; }
+
+a {
+  font-size: 16px;
+  text-decoration: none;
+  color: #9394a5; }
+
+p {
+  text-align: center;
+  margin: 3rem 0 1rem;
+  color: #484b6a; }
+
+.theme {
+  width: 2rem; }
+
+.attribution {
+  font-size: 11px;
+  text-align: center; }
+
+.attribution a {
+  color: #3e52a3; }
+
+.wrapper {
+  width: 100%;
+  height: 100vh; }
+  .wrapper__img {
+    width: 100%;
+    background-image: url("../images/bg-desktop-light.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 45vh; }
+    @media only screen and (max-width: 900px) {
+      .wrapper__img {
+        background-image: url("../images/bg-mobile-light.jpg");
+        min-height: 35vh; } }
+    @media only screen and (max-width: 600px) {
+      .wrapper__img {
+        min-height: 30vh; } }
+
+.container {
+  max-width: 35rem;
+  margin: 0 auto;
+  padding: 1rem;
+  position: relative;
+  top: -14rem; }
+  .container__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem; }
+  .container__form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #fafafa;
+    padding: 1rem 1.2rem;
+    margin-bottom: 2rem;
+    border-radius: 0.3rem; }
+    .container__form input {
+      flex: 1;
+      font-size: 18px;
+      font-family: "Josefin sans", sans-serif;
+      max-width: 100%;
+      border: none;
+      color: #9394a5;
+      margin-bottom: -0.1rem; }
+      .container__form input::placeholder {
+        color: #9394a5; }
+      .container__form input:focus {
+        outline: none;
+        border: none; }
+    .container__form label {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: nowrap;
+      margin-right: 1rem;
+      position: relative; }
+      .container__form label input {
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1; }
+  .container__todos {
+    background-color: #fafafa;
+    border-radius: 0.3rem;
+    box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.12); }
+
+.todo-list {
+  list-style: none; }
+
+.todo {
+  display: flex;
+  border-bottom: 1.5px solid #e4e5f1;
+  padding: 1.2rem; }
+  .todo label {
+    margin-right: 1rem; }
+  .todo span {
+    color: #484b6a; }
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.2rem; }
+  .filters span {
+    color: #9394a5;
+    font-size: 16px; }
+
+.links a {
+  margin-right: 0.6rem; }
+
+[type="checkbox"] {
+  opacity: 0;
+  position: absolute; }
+
+[type="checkbox"]:checked + .custom-checkbox {
+  background-image: linear-gradient(to bottom, #57ddff, #c058f3);
+  border: none; }
+  [type="checkbox"]:checked + .custom-checkbox img {
+    opacity: 1; }
+
+.custom-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #9394a5;
+  border-radius: 100%;
+  margin-top: -2px; }
+  .custom-checkbox img {
+    opacity: 0; }
