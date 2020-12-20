@@ -150,7 +150,7 @@ p {
   padding: 1.2rem; }
   .todo label {
     margin-right: 1rem; }
-  .todo span {
+  .todo-text {
     color: #484b6a; }
 
 .filters {
@@ -212,3 +212,7 @@ p {
   margin-top: -2px; }
   .custom-checkbox img {
     opacity: 0; }
+
+.completed {
+  text-decoration: line-through;
+  color: #d2d3db; }

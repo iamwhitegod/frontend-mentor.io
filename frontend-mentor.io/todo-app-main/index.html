@@ -30,7 +30,7 @@
           </div>
         </div>
 
-        <form class="container__form">
+        <form class="container__form" id="form">
           <label>
             <input type="radio" name="light" disabled />
             <span class="custom-checkbox"></span>
@@ -48,7 +48,7 @@
           <ul class="todo-list">
             <li class="todo" draggable="true">
               <label>
-                <input type="checkbox" name="light" checked />
+                <input type="checkbox" name="light" />
                 <span class="custom-checkbox">
                   <img src="images/icon-check.svg" alt="" />
                 </span>
@@ -124,7 +124,7 @@
               <a href="#">Completed</a>
             </div>
 
-            <a href="#">Clear Completed</a>
+            <a href="#" class="clear-completed">Clear Completed</a>
           </div>
         </div>
 
@@ -144,5 +144,7 @@
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

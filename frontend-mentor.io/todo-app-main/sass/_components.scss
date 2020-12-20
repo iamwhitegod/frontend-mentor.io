@@ -12,7 +12,7 @@
     margin-right: 1rem;
   }
 
-  span {
+  &-text {
     color: $very-dark-grayish-blue;
   }
 }
@@ -106,4 +106,9 @@
   img {
     opacity: 0;
   }
+}
+
+.completed {
+  text-decoration: line-through;
+  color: $light-grayish-blue;
 }
