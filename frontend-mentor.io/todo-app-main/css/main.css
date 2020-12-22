@@ -148,6 +148,9 @@ p {
   display: flex;
   border-bottom: 1.5px solid #e4e5f1;
   padding: 1.2rem; }
+  .todo:hover {
+    background-color: #fafafa;
+    cursor: pointer; }
   .todo label {
     margin-right: 1rem; }
   .todo-text {
@@ -216,3 +219,9 @@ p {
 .completed {
   text-decoration: line-through;
   color: #d2d3db; }
+
+.sortable-chosen {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.12); }
+
+.sortable-drag {
+  opacity: 0.1; }

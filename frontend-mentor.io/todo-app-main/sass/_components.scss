@@ -8,6 +8,11 @@
   border-bottom: 1.5px solid $very-light-grayish-blue;
   padding: 1.2rem;
 
+  &:hover {
+    background-color: $very-light-gray;
+    cursor: pointer;
+  }
+
   label {
     margin-right: 1rem;
   }
@@ -111,4 +116,12 @@
 .completed {
   text-decoration: line-through;
   color: $light-grayish-blue;
+}
+
+.sortable-chosen {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.12);
+}
+
+.sortable-drag {
+  opacity: 0.1;
 }

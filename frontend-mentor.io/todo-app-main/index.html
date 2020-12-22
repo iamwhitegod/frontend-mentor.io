@@ -41,12 +41,13 @@
             name="todo"
             id="todo"
             placeholder="Create a new todo..."
+            autocomplete="off"
           />
         </form>
 
         <div class="container__todos">
           <ul class="todo-list">
-            <li class="todo" draggable="true">
+            <!-- <li class="todo" draggable="true">
               <label>
                 <input type="checkbox" name="light" />
                 <span class="custom-checkbox">
@@ -112,15 +113,15 @@
               <span class="todo-text"
                 >Completed Todo app on Frontend Mentor</span
               >
-            </li>
+            </li> -->
           </ul>
 
           <div class="filters">
-            <span>5 items left</span>
+            <span class="count">5 items left</span>
 
             <div class="links">
               <a href="#">All</a>
-              <a href="#">Active</a>
+              <a href="#" id="active">Active</a>
               <a href="#">Completed</a>
             </div>
 
@@ -130,7 +131,7 @@
 
         <div class="links--2">
           <a href="#">All</a>
-          <a href="#">Active</a>
+          <a href="#" id="active-2">Active</a>
           <a href="#">Completed</a>
         </div>
 
