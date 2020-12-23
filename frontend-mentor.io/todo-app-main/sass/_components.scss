@@ -7,6 +7,7 @@
   // align-items: center;
   border-bottom: 1.5px solid $very-light-grayish-blue;
   padding: 1.2rem;
+  animation: fade 0.6s ease-in;
 
   &:hover {
     background-color: $very-light-gray;
@@ -22,18 +23,22 @@
   }
 }
 
+// .todo.dark {
+//   background-color: $very-dark-desaturated-blue-dm;
+// }
+
 .filters {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 1.2rem;
+  // padding: 0.8rem 1.2rem;
+  padding: 1.2rem;
 
-  @include respond(md) {
-    padding: 1.2rem;
-  }
+  // @include respond(md) {
+  // }
 
   span {
-    color: $dark-grayish-blue;
+    color: $light-grayish-blue;
     font-size: $links-font-size;
 
     @include respond(md) {
@@ -42,9 +47,20 @@
   }
 }
 
+.filters.dark {
+  span {
+    color: $dark-grayish-blue-dm;
+  }
+}
+
 .links {
   a {
     margin-right: 0.6rem;
+
+    &:hover {
+      color: $bright-blue;
+      transition: all 0.3s;
+    }
   }
 
   @include respond(md) {
@@ -57,6 +73,11 @@
     a {
       font-size: $links-font-size;
       margin-right: 1rem;
+
+      &:hover {
+        color: $bright-blue;
+        transition: all 0.3s;
+      }
     }
 
     @include respond(md) {
@@ -70,6 +91,11 @@
       box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.12);
       padding: 1.4rem;
     }
+  }
+
+  &--2.dark {
+    background-color: $very-dark-desaturated-blue-dm;
+    color: $dark-grayish-blue-dm;
   }
 }
 
@@ -116,6 +142,24 @@
 .completed {
   text-decoration: line-through;
   color: $light-grayish-blue;
+  transition: all 0.3s;
+}
+
+.clear-completed {
+  color: $light-grayish-blue;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $dark-grayish-blue;
+  }
+}
+
+.clear-completed.dark {
+  color: $dark-grayish-blue-dm;
+
+  &:hover {
+    color: $light-grayish-blue;
+  }
 }
 
 .sortable-chosen {
@@ -124,4 +168,14 @@
 
 .sortable-drag {
   opacity: 0.1;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

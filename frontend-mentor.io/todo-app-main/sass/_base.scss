@@ -33,6 +33,14 @@ body {
   }
 }
 
+body.dark {
+  background-color: $very-dark-blue-dm;
+
+  p {
+    color: $dark-grayish-blue-dm;
+  }
+}
+
 h1 {
   font-size: $heading-font-size;
   letter-spacing: 1.2rem;
@@ -61,8 +69,9 @@ a {
 }
 
 p {
+  font-size: $links-font-size;
   text-align: center;
-  margin: 3rem 0 1rem;
+  margin: 4rem 0 2rem;
   color: $very-dark-grayish-blue;
 }
 
@@ -74,6 +83,10 @@ p {
 .attribution {
   font-size: 11px;
   text-align: center;
+}
+
+.attribution.dark {
+  color: $dark-grayish-blue-dm;
 }
 
 .attribution a {

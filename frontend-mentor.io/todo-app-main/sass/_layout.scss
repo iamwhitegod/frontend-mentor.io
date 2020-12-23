@@ -22,13 +22,21 @@
   }
 }
 
+.wrapper__img.dark {
+  background-image: url("../images/bg-desktop-dark.jpg");
+
+  @include respond(md) {
+    background-image: url("../images/bg-mobile-dark.jpg");
+  }
+}
+
 .container {
   max-width: 35rem;
   margin: 0 auto;
   // background-color: yellow;
   padding: 1rem;
   position: relative;
-  top: -14rem;
+  top: -13.5rem;
 
   // @include respond(sm) {
   //   top: -1rem;
@@ -57,6 +65,7 @@
       max-width: 100%;
       border: none;
       color: $dark-grayish-blue;
+      background: none;
       margin-bottom: -0.1rem;
 
       &::placeholder {
@@ -98,9 +107,37 @@
     }
   }
 
+  &__form.dark {
+    background-color: $very-dark-desaturated-blue-dm;
+  }
+
   &__todos {
     background-color: $very-light-gray;
     border-radius: 0.3rem;
     box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+  }
+
+  &__todos.dark {
+    background-color: $very-dark-desaturated-blue-dm;
+
+    .todo {
+      animation: fade 0.6s ease-in;
+      border-bottom: 1.5px solid $very-dark-grayish-blue-dm2;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: $very-dark-desaturated-blue-dm;
+        cursor: pointer;
+      }
+
+      &-text {
+        color: $light-grayish-blue-dm;
+      }
+
+      .completed {
+        color: $dark-grayish-blue-dm;
+      }
+    }
   }
 }
