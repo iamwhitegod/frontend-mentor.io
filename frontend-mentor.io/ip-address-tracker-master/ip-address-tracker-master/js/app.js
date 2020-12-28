@@ -1,35 +1,35 @@
-import axios from "axios";
+import IPaddress from "./models/Ipaddress";
+import generateMap from "./models/Map";
+import * as ipaddressViews from "./views/ipaddressViews";
 
 const form = document.querySelector(".ip-address__form");
-const mapContainer = document.querySelector("#map");
-const results = document.querySelector(".ip-address__results");
 
-mapboxgl.accessToken =
-  "pk.eyJ1Ijoid2hpdGVnb2QiLCJhIjoiY2s5Y3Q5bm52MDdsOTNobzhvenp6MnNsdCJ9.vc6KagoZn4bn0JtaLazS7g";
+const state = {};
 
-const map = new mapboxgl.Map({
-  container: "map",
-  style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
-  center: [-74.5, 40], // starting position [lng, lat]
-  zoom: 10, // starting zoom
+const ctrlSearchIp = async () => {
+  // 1) Get Ipaddress from user input
+  const query = ipaddressViews.getInput();
+  if (!query) return;
+
+  // 2) Add to state
+  state.ipaddress = new IPaddress(query);
+
+  // 3) Call get Ipaddress
+  await state.ipaddress.getIpAddress();
+
+  // 4) Generate map
+  generateMap(
+    state.ipaddress.result.location.lng,
+    state.ipaddress.result.location.lat
+  );
+
+  // 4) Render UI
+  ipaddressViews.renderSearchResults(state.ipaddress.result);
+
+  ipaddressViews.clearInputs();
+};
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  ctrlSearchIp();
 });
-
-class Ipaddress {
-  constructor(query) {
-    this.query = query;
-  }
-
-  async getIpAddress() {
-    try {
-      const results = await axios(
-        `https://geo.ipify.org/api/v1?apiKey=at_IDRgiq72BInxrEa0x3FZme0KrGNXs&ipAddress=${this.query}`
-      );
-
-      console.log(results);
-    } catch (err) {
-      console.log(err);
-    }
-  }
-}
-
-new Ipaddress("192.212.174.101").getIpAddress().then(console.log(results));
