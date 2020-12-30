@@ -5,6 +5,19 @@ export default class IPaddress {
     this.query = query;
   }
 
+  async getClientIpaddress() {
+    try {
+      const results = await axios(
+        `https://geo.ipify.org/api/v1?apiKey=at_IDRgiq72BInxrEa0x3FZme0KrGNXs`
+      );
+
+      this.result = results.data;
+      console.log(this.result);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   async getIpAddress() {
     try {
       const results = await axios(
@@ -14,7 +27,7 @@ export default class IPaddress {
       this.result = results.data;
       console.log(this.result);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   }
 }

@@ -113,13 +113,19 @@ body {
   .ip-address__results-data {
     font-size: var(--font-title);
     font-weight: 500; }
+  .ip-address__content {
+    position: relative; }
   .ip-address__map-container {
     width: 100%;
     height: 60rem; }
 
 .attribution {
   font-size: 1.4rem;
-  text-align: center; }
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%); }
 
 .attribution a {
   color: #3e52a3; }

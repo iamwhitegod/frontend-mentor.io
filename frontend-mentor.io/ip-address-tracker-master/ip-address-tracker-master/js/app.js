@@ -6,6 +6,24 @@ const form = document.querySelector(".ip-address__form");
 
 const state = {};
 
+const ctrlInit = async () => {
+  // 1) Add to state & Create a new Ipaddress
+  state.clientIp = new IPaddress();
+
+  // 2) Get Client's Ipaddress
+  await state.clientIp.getClientIpaddress();
+
+  // 3) Generate Map
+  generateMap(
+    state.clientIp.result.location.lng,
+    state.clientIp.result.location.lat
+  );
+
+  // 4) Render UI
+  ipaddressViews.renderSearchResults(state.clientIp.result);
+};
+
+// SEARCH IP ADDRESS CONTROLLER
 const ctrlSearchIp = async () => {
   // 1) Get Ipaddress from user input
   const query = ipaddressViews.getInput();
@@ -28,6 +46,8 @@ const ctrlSearchIp = async () => {
 
   ipaddressViews.clearInputs();
 };
+
+window.addEventListener("load", ctrlInit);
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();

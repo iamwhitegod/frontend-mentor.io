@@ -147,6 +147,9 @@ body {
   font-size: var(--font-title);
   font-weight: 500;
 }
+.ip-address__content {
+  position: relative;
+}
 .ip-address__map-container {
   width: 100%;
   height: 60rem;
@@ -155,6 +158,10 @@ body {
 .attribution {
   font-size: 1.4rem;
   text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
 }
 
 .attribution a {
